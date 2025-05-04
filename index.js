@@ -13,10 +13,8 @@ app.use(express.json());
 // Connexion à MongoDB Atlas
 const mongoURI = process.env.MONGO_URI;
 
-mongoose.connect(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoose.connect(mongoURI)
+
   .then(() => console.log('MongoDB Connecté'))
   .catch((err) => {
     console.error(' Erreur de connexion  :', err.message);
